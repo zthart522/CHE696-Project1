@@ -14,37 +14,37 @@ set output "properties_2x2.png"
 set multiplot layout 2,2 spacing 0.05 title "Thermodynamic Properties vs Density" font ",16"
 
 # ---------- ENERGY ----------
-set xlabel "Density"
-set ylabel "E*/N"
-set title "Average E*/N vs Density"
+set xlabel "Reduced Density, {/Symbol r}^{*}"
+set ylabel "Reduced Energy per Atom, E^{*}/N"
+set title "Average E^{*}/N vs {/Symbol r}^{*}"
 set key top right
-plot "log_table_stats.dat" using 1:2:3 with yerrorbars lc rgb "red" pt 13 ps 1 title "Computed", \
-     "literature.dat" using 1:4:5 with yerrorbars pt 3 ps 1 title "Literature"
+plot "log_table_stats.dat" using 1:2:3 with yerrorbars lc rgb "red" pt 13 ps 1.5 title "Computed", \
+     "literature.dat" using 1:4:5 with yerrorbars pt 3 ps 1.5 title "Literature"
 
 # ---------- PRESSURE ----------
-set xlabel "Density"
-set ylabel "P*"
-set title "Average P* vs Density"
-set key top right
-plot "log_table_stats.dat" using 1:4:5 with yerrorbars lc rgb "red" pt 13 ps 1 title "Computed", \
-     "literature.dat" using 1:6:7 with yerrorbars pt 3 ps 1 title "Literature"
+set xlabel "Reduced Density, {/Symbol r}^{*}"
+set ylabel "Reduced Pressure, P^{*}"
+set title "Average P^{*} vs {/Symbol r}^{*}"
+set key top left
+plot "log_table_stats.dat" using 1:4:5 with yerrorbars lc rgb "red" pt 13 ps 1.5 title "Computed", \
+     "literature.dat" using 1:6:7 with yerrorbars pt 3 ps 1.5 title "Literature"
 
 # ---------- CV ----------
-set xlabel "Density"
-set ylabel "Cv*/N_xs"
-set title "Average Cv*/N_xs vs Density"
+set xlabel "Reduced Density, {/Symbol r}^{*}"
+set ylabel "Reduced Specific Heat per Atom, C_{v}^{*}/N_{XS}"
+set title "Average C_{v}^{*}/N vs {/Symbol r}^{*}"
 set key top right
-plot "log_table_stats.dat" using 1:6:7 with yerrorbars lc rgb "red" pt 13 ps 1 title "Computed", \
-     "literature.dat" using 1:2:3 with yerrorbars pt 3 ps 1 title "Literature"
+plot "log_table_stats.dat" using 1:6:7 with yerrorbars lc rgb "red" pt 13 ps 1.5 title "Computed", \
+     "literature.dat" using 1:2:3 with yerrorbars pt 3 ps 1.5 title "Literature"
 
 # ---------- MU ----------
-set xlabel "Density"
-set ylabel "Mu*_xs"
-set title "Average Mu*_xs vs Density"
-set key top right
-plot "log_table_stats.dat" using 1:8:9 with yerrorbars lc rgb "red" pt 13 ps 1 title "Computed (N=500)", \
-     "literature_mu_64.dat" using 1:2:3 with yerrorbars pt 3 ps 1 title "Literature (N=64)", \
-     "literature_mu_256.dat" using 1:2:3 with yerrorbars pt 9 ps 1 title "Literature (N=256)"
+set xlabel "Reduced Density, {/Symbol r}^{*}"
+set ylabel "Reduced Excess Chemical Potential, {/Symbol m}^{*}_{XS}"
+set title "Average {/Symbol m}^{*}_{XS} vs {/Symbol r}^{*}"
+set key top left
+plot "log_table_stats.dat" using 1:8:9 with yerrorbars lc rgb "red" pt 13 ps 1.5 title "Computed (N=500)", \
+     "literature_mu_64.dat" using 1:2:3 with yerrorbars pt 3 ps 1.5 title "Literature (N=64)", \
+     "literature_mu_256.dat" using 1:2:3 with yerrorbars pt 9 ps 1.5 title "Literature (N=256)"
 
 # -----------------------------
 # End multiplot

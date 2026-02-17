@@ -31,7 +31,7 @@ plot \
 set title "Number Integral"
 set xlabel "Distance (Å)"
 set ylabel "Number of atoms"
-set key horizontal
+unset key
 set grid
 
 plot \
