@@ -19,7 +19,7 @@ set ylabel "Reduced Energy per Atom, E^{*}/N"
 set title "Average E^{*}/N vs {/Symbol r}^{*}"
 set key top right
 plot "log_table_stats.dat" using 1:2:3 with yerrorbars lc rgb "red" pt 13 ps 1.5 title "Computed", \
-     "literature.dat" using 1:4:5 with yerrorbars pt 3 ps 1.5 title "Literature"
+     "literature.dat" using 1:($4*1.2):($5*1.2) with yerrorbars pt 3 ps 1.5 title "Literature"
 
 # ---------- PRESSURE ----------
 set xlabel "Reduced Density, {/Symbol r}^{*}"
@@ -27,7 +27,7 @@ set ylabel "Reduced Pressure, P^{*}"
 set title "Average P^{*} vs {/Symbol r}^{*}"
 set key top left
 plot "log_table_stats.dat" using 1:4:5 with yerrorbars lc rgb "red" pt 13 ps 1.5 title "Computed", \
-     "literature.dat" using 1:6:7 with yerrorbars pt 3 ps 1.5 title "Literature"
+     "literature.dat" using 1:($1*1.2*$6):($1*1.2*$7) with yerrorbars pt 3 ps 1.5 title "Literature"
 
 # ---------- CV ----------
 set xlabel "Reduced Density, {/Symbol r}^{*}"
